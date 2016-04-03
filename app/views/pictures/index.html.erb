@@ -1,33 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Pictures</h1>
+<h1>Your Pictures</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Picture</th>
-      <th>Datetime</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pictures.each do |picture| %>
-      <tr>
-        <td><%= picture.name %></td>
-        <td><%= picture.description %></td>
-        <td><%= image_tag(picture.picture_url, :width => 600) if picture.picture.present? %></td>
-        <td><%= picture.datetime %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% @pictures.in_groups_of(3) do |group| %>
+  <div class="row">
+    <% group.compact.each do |picture| %>
+      <div class="col-md-4">
+        <%= image_tag picture.picture_url, width: '300px' if picture.picture.present?%>
+        <h4><%= link_to picture.name, picture %></h4>
+        <%= picture.description %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Picture', new_picture_path %>
+  </div>
+<% end %>
