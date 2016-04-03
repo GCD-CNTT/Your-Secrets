@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :comments
   resources :pictures
   resources :ideas
-  
+  resource :user, only: [:edit, :update]
   root :to => redirect('/home/infor')
   get "home/infor"
   

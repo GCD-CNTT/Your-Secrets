@@ -35,5 +35,6 @@
     <%= f.label :picture %><br>
     <%= f.file_field :picture %>
   </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   
 <% end %>
