@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
         format.html { render :template => "ideas/show" }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
-end
+  end
 
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
@@ -72,4 +72,5 @@ end
     def comment_params
      params.require(:comment).permit(:user_name, :body, :idea_id, :picture, :reply_id, :user_id)
     end
+  end
 end
