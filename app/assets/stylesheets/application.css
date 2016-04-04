@@ -32,6 +32,29 @@ footer {
   background-color: #ebebeb;
   padding: 30px 0;
 }
-.float_right{ float: right; color:black}
-  
+*{margin: 0}
+ul, li{list-style:none}
+.dacap{
+  margin-left: 10px;
+  margin-bottom: 5px;
+  float: right;
 }
+.dacap ul a{
+float: left;
+color: #1685a9;
+padding:7px 3px;
+}
+ 
+.dacap  ul{
+position:absolute;
+display:none;
+width:150px;
+background:#f0f0f4;
+/*margin-top:32px;*/
+}
+ 
+.dacap li:hover > ul{
+display:block;
+}
+ 
+

@@ -8,10 +8,12 @@
   <div class="col-md-3">
     <p><b>Name: </b><%= @picture.name %></p>
     <p><b>Description: </b><%= @picture.description %></p>
+    <p><b>Datetime: </b><%= @picture.datetime %></p>
     <p>
-      <%= link_to 'Edit', edit_idea_path(@picture) %> |
-      <%= link_to 'Destroy', @picture, data: { confirm: 'Are you sure?' }, method: :delete %> |
-      <%= link_to 'Back', ideas_path %>
+      <%= link_to 'Edit', edit_idea_path(@picture),class: "btn btn-warning" %> 
+      <%= link_to 'Destroy', @picture, data: { confirm: 'Are you sure?' }, method: :delete, class: "btn btn-danger" %> 
+      <%= link_to 'Back', ideas_path, class: "btn btn-info" %>
     </p>
   </div>
 </div>
+<%= render 'form' %>
